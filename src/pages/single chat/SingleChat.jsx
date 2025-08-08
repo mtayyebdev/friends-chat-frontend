@@ -80,7 +80,7 @@ function SingleChat({ chatId }) {
 
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors">
+    <div className="h-screen flex flex-col bg-gray-100 dark:bg-gray-900 transition-colors">
       {/* Header */}
       <div className="flex items-center px-4 py-3 bg-blue-600 dark:bg-blue-700 text-white shadow">
         <div className="w-10 h-10 rounded-full overflow-hidden bg-white flex items-center justify-center mr-3">

@@ -29,6 +29,9 @@ function ChatsAside() {
 
   const chatHandler = (id) => {
     setchatId(id)
+    if(id){
+      setshowSideBar(false)
+    }
   }
 
   useEffect(() => {
@@ -42,7 +45,7 @@ function ChatsAside() {
 
   return (
     <>
-      <div className="h-[641px] relative flex bg-gray-100 dark:bg-gray-900 transition-colors">
+      <div className="h-screen relative flex bg-gray-100 dark:bg-gray-900 transition-colors">
         <div className='w-[60px] relative border-r text-black dark:text-white border-blue-500'>
           <div className='text-3xl rounded cursor-pointer hover:bg-blue-600/30 flex items-center justify-center py-5 w-full' onClick={() => setshowSideBar(!showSideBar)}>
             <LuContact />
@@ -55,7 +58,7 @@ function ChatsAside() {
           </div>
         </div>
         {/* Sidebar */}
-        <aside className={`${showSideBar ? "block" : "hidden"} z-10 absolute left-[60px] top-0 sm:static w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col`}>
+        <aside className={`${showSideBar ? "block" : "hidden"} z-10 h-screen absolute left-[60px] top-0 sm:static w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col`}>
           <div className="p-3 border-b border-gray-200 dark:border-gray-700">
             <InputBox type='text' placeholder={"Search by name or number"} value={search} setValue={setSearch} />
             <div className="flex items-center gap-1.5 text-black dark:text-white mt-3">
