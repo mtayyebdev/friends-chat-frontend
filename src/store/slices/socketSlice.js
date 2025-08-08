@@ -22,6 +22,7 @@ const SocketHandlerSlice = createSlice({
         
         socket.on("connect_error", (err) => {
           console.log("❌ Socket Connection Error:", err);
+          state.error = err;
         });
         state.connected = true;
         state.error = null;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { FaEdit, FaLock, FaUserCircle, FaMoon, FaSun, FaPhoneAlt, FaSignOutAlt, FaCamera, FaArrowLeft } from 'react-icons/fa'
-import { LuX } from 'react-icons/lu'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { useSelector, useDispatch } from 'react-redux'
 import { DisConnectSocket } from '../../store/slices/socketSlice'
+import { changeTheme } from '../../store/slices/themeSlice'
 
 function Profile() {
   // Example user data, replace with actual data from your store/API
@@ -13,11 +13,11 @@ function Profile() {
   const [avatarPreview, setAvatarPreview] = useState(avatar)
   const [name, setName] = useState("")
   const [bio, setBio] = useState("")
-  const [theme, setTheme] = useState("light")
   const [oldPassword, setOldPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
 
   const { user } = useSelector((state) => state.user);
+    const { theme } = useSelector((state) => state.themehandler);
   const dispatch = useDispatch()
 
   // Edit toggles
@@ -116,9 +116,7 @@ function Profile() {
   }
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "light" ? "dark" : "light")
-    document.body.classList.remove("dark");
-    document.body.classList.add("light")
+    dispatch(changeTheme())
   }
 
   useEffect(() => {

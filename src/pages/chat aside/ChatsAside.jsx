@@ -7,7 +7,7 @@ import { LuContact, LuSettings } from 'react-icons/lu'
 
 function ChatsAside() {
   const [showSideBar, setshowSideBar] = useState(false)
-  const { users: chattingusers, onlineUsers } = useSelector((state) => state.chattingUsers)
+  const { users: chattingusers, onlineUsers, loading } = useSelector((state) => state.chattingUsers)
   const { user } = useSelector((state) => state.user);
   const [filteredContacts, setfilteredContacts] = useState([])
   const [search, setSearch] = useState("")
@@ -20,10 +20,10 @@ function ChatsAside() {
       setfilteredContacts(filterOnline)
     } else {
       setfilteredContacts(chattingusers.filter(
-      c =>
-        c.name.toLowerCase().includes(search.toLowerCase()) ||
-        c.phone.includes(search)
-    ))
+        c =>
+          c.name.toLowerCase().includes(search.toLowerCase()) ||
+          c.phone.includes(search)
+      ))
     }
   }
 
@@ -37,7 +37,7 @@ function ChatsAside() {
         c.name.toLowerCase().includes(search.toLowerCase()) ||
         c.phone.includes(search)
     ))
-  }, [search])
+  }, [search,loading])
 
 
   return (

@@ -1,5 +1,17 @@
 @import "tailwindcss";
-:root{
-    --primary:red;
-    --secondary:rgb(0, 46, 252);
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+    --primary: red;
+    --secondary: rgb(0, 46, 252);
+}
+
+@layer base {
+    html {
+        @apply transition-colors duration-300;
+    }
+
+    body {
+        @apply bg-gray-100 dark:bg-gray-900 text-black dark:text-white
+    }
 }
