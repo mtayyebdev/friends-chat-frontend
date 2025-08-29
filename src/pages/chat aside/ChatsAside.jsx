@@ -3,7 +3,7 @@ import SingleChat from '../single chat/SingleChat.jsx'
 import { SingleUserContact, InputBox } from '../../components/index.js'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { LuContact, LuSettings } from 'react-icons/lu'
+import { LuContact, LuSettings,LuCircleAlert } from 'react-icons/lu'
 
 function ChatsAside() {
   const [showSideBar, setshowSideBar] = useState(false)
@@ -53,12 +53,15 @@ function ChatsAside() {
           <div className='text-3xl mt-2 rounded cursor-pointer hover:bg-blue-600/30 flex items-center justify-center py-4 w-full'>
             <LuSettings />
           </div>
+          <div className='text-3xl mt-2 rounded cursor-pointer hover:bg-blue-600/30 flex items-center justify-center py-4 w-full'>
+            <Link to={"/support"}><LuCircleAlert /></Link>
+          </div>
           <div className='overflow-hidden absolute bottom-10 w-full flex items-center justify-center'>
             <Link to={"/profile"}><img src={user?.avatar} alt={user?.name} className='w-[45px] h-[45px] rounded-full border-2 border-pink-500' /></Link>
           </div>
         </div>
         {/* Sidebar */}
-        <aside className={`${showSideBar ? "block" : "hidden"} z-10 h-screen absolute left-[60px] top-0 sm:static w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col`}>
+        <aside className={`${showSideBar ? "block" : "hidden"} z-15 h-screen absolute left-[60px] top-0 sm:static w-80 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 flex flex-col`}>
           <div className="p-3 border-b border-gray-200 dark:border-gray-700">
             <InputBox type='text' placeholder={"Search by name or number"} value={search} setValue={setSearch} />
             <div className="flex items-center gap-1.5 text-black dark:text-white mt-3">

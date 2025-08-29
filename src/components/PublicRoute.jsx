@@ -4,7 +4,7 @@ import { useSelector,useDispatch } from 'react-redux'
 function PublicRoute({ children }) {
     const { user,loading } = useSelector((state) => state.user);
     
-    if (loading) return <p>Loading...</p>;
+    // if (loading) return <p>Loading...</p>;
     
 
     if (user?._id) {

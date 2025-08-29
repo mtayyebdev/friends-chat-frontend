@@ -9,8 +9,6 @@ function Support() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Handle form submission logic here
-    console.table({ name, email,subject, message })
     setName("")
     setEmail("")
     setMessage("")
@@ -57,24 +55,21 @@ function Support() {
           <h2 className="text-2xl font-bold mb-4 text-gray-800 dark:text-white">Contact Details</h2>
           <ul className="space-y-3 text-gray-700 dark:text-gray-300">
             <li>
-              <span className="font-semibold">Email:</span> support@chatapp.com
+              <span className="font-semibold">Email:</span> mtayyebdev@gmail.com
             </li>
             <li>
-              <span className="font-semibold">Phone:</span> +1 234 567 890
+              <span className="font-semibold">Phone:</span> +92 3368212215
             </li>
             <li>
-              <span className="font-semibold">WhatsApp:</span> +1 234 567 890
+              <span className="font-semibold">WhatsApp:</span> +92 3368212215
             </li>
             <li>
-              <span className="font-semibold">Telegram:</span> @chatapp_support
-            </li>
-            <li>
-              <span className="font-semibold">Address:</span> 123 ChatApp Lane, Silicon Valley, CA
+              <span className="font-semibold">Address:</span> Swabi, Pakistan
             </li>
           </ul>
           <div className="mt-6">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              We usually respond within 24 hours. For urgent issues, please use WhatsApp or Telegram.
+              We usually respond within 24 hours. For urgent issues, please use WhatsApp.
             </p>
           </div>
         </div>
